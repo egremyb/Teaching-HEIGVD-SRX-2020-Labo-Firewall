@@ -125,21 +125,21 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 
 | Adresse IP source | Adresse IP destination | Type | Port src | Port dst | Action |
 | :---:             | :---:                  | :---:| :------: | :------: | :----: |
-|        LAN        |      Serveurs DNS      | TCP  |    53    |    53    | ACCEPT |
-|        LAN        |           WAN          | UDP  |    53    |    53    | ACCEPT |
-|        LAN        |           WAN          | ICMP |     1    |     1    | ACCEPT |
-|        LAN        |           DMZ          | ICMP |     1    |     1    | ACCEPT |
-|        DMZ        |           LAN          | ICMP |     1    |     1    | ACCEPT |
-|        LAN        |           WAN          | TCP  |    80    |    80    | ACCEPT |
-|        LAN        |           WAN          | TCP  |  8080    |  8080    | ACCEPT |
-|        LAN        |           WAN          | TCP  |   443    |   443    | ACCEPT |
-|        WAN        |       192.168.200.3    | TCP  |    80    |    80    | ACCEPT |
-|        WAN        |       192.168.200.3    | UDP  |    80    |    80    | ACCEPT |
-|        LAN        |       192.168.200.3    | TCP  |    80    |    80    | ACCEPT |
-|        LAN        |       192.168.200.3    | UDP  |    80    |    80    | ACCEPT |
-|   192.168.100.3   |       192.168.200.3    | TCP  |    22    |    22    | ACCEPT |
-|   192.168.100.3   |       192.168.100.2    | TCP  |    22    |    22    | ACCEPT |
-|         *         |            *           | ANY  |     *    |     *    |  DROP  |
+| 192.168.100.0/24  | Serveurs DNS           | TCP  | 53       | 53       | ACCEPT |
+| 192.168.100.0/24  | interface WAN          | UDP  | 53       | 53       | ACCEPT |
+| 192.168.100.0/24  | interface WAN          | ICMP | 1        | 1        | ACCEPT |
+| 192.168.100.0/24  | 192.168.200.0/24       | ICMP | 1        | 1        | ACCEPT |
+| 192.168.200.0/24  | 192.168.100.0/24       | ICMP | 1        | 1        | ACCEPT |
+| 192.168.100.0/24  | interface WAN          | TCP  | 80       | 80       | ACCEPT |
+| 192.168.100.0/24  | interface WAN          | TCP  | 8080     | 8080     | ACCEPT |
+| 192.168.100.0/24  | interface WAN          | TCP  | 443      | 443      | ACCEPT |
+| interface WAN     | 192.168.200.3          | TCP  | 80       | 80       | ACCEPT |
+| interface WAN     | 192.168.200.3          | UDP  | 80       | 80       | ACCEPT |
+| 192.168.100.0/24  | 192.168.200.3          | TCP  | 80       | 80       | ACCEPT |
+| 192.168.100.0/24  | 192.168.200.3          | UDP  | 80       | 80       | ACCEPT |
+| 192.168.100.3     | 192.168.200.3          | TCP  | 22       | 22       | ACCEPT |
+| 192.168.100.3     | 192.168.100.2          | TCP  | 22       | 22       | ACCEPT |
+| *                 | *                      | ANY  | *        | *        | DROP   |
 
 ---
 
