@@ -568,7 +568,10 @@ iptables -A FORWARD -i eth0 -d 192.168.200.3 -p tcp --dport 80 -j ACCEPT
 
 ---
 
-**LIVRABLE : capture d'écran.**
+**LIVRABLE : capture d'écran.**  
+
+![wget heig](./figures/ 	screenshot_wget_heig.png)
+![wget dmz](./figures/screenshot_wget_dmz.png)
 
 ---
 
@@ -601,6 +604,8 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 
 **LIVRABLE : capture d'écran de votre connexion ssh.**
 
+![ssh](./figures/screenshot_ssh_dmz.png)
+
 ---
 
 <ol type="a" start="9">
@@ -612,6 +617,8 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 **Réponse**
 
 **LIVRABLE : Votre réponse ici...**
+
+SSH nous permet de nous connecter à distance de façon sécurisé (connexion chiffrée) à un serveur pour y effectuer des tâches (configuration du serveur, exécuter des scripts, etc). 
 
 ---
 
@@ -625,6 +632,8 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 **Réponse**
 
 **LIVRABLE : Votre réponse ici...**
+
+Ce type de connexion offre beaucoup de permissions à celui qui se connecte, ainsi il faut faire attention à ajouter seulement les adresses IP autorisées dans les règles iptables pour ce type de connexion.
 
 ---
 
@@ -640,5 +649,5 @@ A présent, vous devriez avoir le matériel nécessaire afin de reproduire la ta
 ---
 
 **LIVRABLE : capture d'écran avec toutes vos règles.**
-
+![iptables](./figures/screenshot_iptables.png)
 ---
