@@ -572,7 +572,8 @@ iptables -A FORWARD -i eth0 -d 192.168.200.3 -p tcp --dport 80 -j ACCEPT
 
 **LIVRABLE : capture d'écran.**  
 
-![wget heig](./figures/ 	screenshot_wget_heig.png)
+![wget heig](./figures/screenshot_wget_heig.png)
+
 ![wget dmz](./figures/screenshot_wget_dmz.png)
 
 ---
