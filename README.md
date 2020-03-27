@@ -443,7 +443,8 @@ Faire une capture du ping.
 
 ---
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**  
-![ping vers Internet](./figures/screenshot_ping_server_internet_success.png
+
+![ping vers Internet](./figures/screenshot_ping_server_internet_success.png)
 ---
 
 <ol type="a" start="3">
@@ -510,6 +511,7 @@ iptables -A FORWARD -s 192.168.100.0/24 -o eth0 -p udp --dport 53 -j ACCEPT
 ---
 
 **LIVRABLE : capture d'écran de votre ping.**  
+
 ![ping Google](./figures/screenshot_ping_client_google_success.png)
 ---
 
