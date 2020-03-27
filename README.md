@@ -235,6 +235,7 @@ ping 192.168.200.3
 ---
 
 **LIVRABLE : capture d'écran de votre tentative de ping.**  
+
 ![tentative de ping](./figures/screenshot_ping_client_server_fail.png)
 
 ---
@@ -291,6 +292,7 @@ ping 192.168.100.3
 ---
 
 **LIVRABLE : capture d'écran de votre nouvelle tentative de ping.**  
+
 ![nouvelle tentative de ping](./figures/screenshot_ping_server_client_success.png)
 
 
@@ -307,6 +309,7 @@ ping 8.8.8.8
 ---
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**  
+
 ![ping vers Internet](./figures/screenshot_ping_server_internet_fail.png)
 
 ---
@@ -478,6 +481,7 @@ ping www.google.com
 ---
 
 **LIVRABLE : capture d'écran de votre ping.**  
+
 ![ping Google](./figures/screenshot_ping_client_google_fail.png)
 ---
 
@@ -489,8 +493,8 @@ Commandes iptables :
 
 ```bash
 # DNS LAN->WAN
-iptables -A FORWARD -p tcp --source 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT 
-iptables -A FORWARD -p udp --source 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT 
+iptables -A FORWARD -s 192.168.100.0/24 -o eth0 -p tcp --dport 53 -j ACCEPT 
+iptables -A FORWARD -s 192.168.100.0/24 -o eth0 -p udp --dport 53 -j ACCEPT 
 ```
 
 ---
@@ -502,7 +506,7 @@ iptables -A FORWARD -p udp --source 192.168.100.0/24 -o eth0 --dport 53 -j ACCEP
 
 ---
 
-**LIVRABLE : capture d'écran de votre ping.**
+**LIVRABLE : capture d'écran de votre ping.**  
 ![ping Google](./figures/screenshot_ping_client_google_success.png)
 ---
 
@@ -514,7 +518,8 @@ iptables -A FORWARD -p udp --source 192.168.100.0/24 -o eth0 --dport 53 -j ACCEP
 ---
 **Réponse**
 
-**LIVRABLE : Votre réponse ici...**
+**LIVRABLE : Votre réponse ici...**  
+
 Le premier ping fonctionnait car le client LAN effectuait le ping directement sur une IP. Le deuxième ping ne pouvait pas fonctionner car il lui fallait contacter un serveur DNS pour lier le nom de domaine à une IP. Ceci ne pouvant pas fonctionner avant l'ajout des règles iptable pour le DNS.
 ---
 
@@ -534,7 +539,9 @@ Commandes iptables :
 ---
 
 ```bash
-LIVRABLE : Commandes iptables
+iptables -A FORWARD -s 192.168.100.0/24 -o eth0 -p tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -s 192.168.100.0/24 -o eth0 -p tcp --dport 8080 -j ACCEPT
+iptables -A FORWARD -s 192.168.100.0/24 -o eth0 -p tcp --dport 443 -j ACCEPT
 ```
 
 ---
@@ -546,7 +553,8 @@ Commandes iptables :
 ---
 
 ```bash
-LIVRABLE : Commandes iptables
+iptables -A FORWARD -s 192.168.100.0/24 -d 192.168.200.3 -p tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -i eth0 -d 192.168.200.3 -p tcp --dport 80 -j ACCEPT
 ```
 ---
 
