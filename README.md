@@ -410,6 +410,9 @@ iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 
+# Statefull mode enable
+iptables -A FORWARD -m conntrack --ctstate ESTABLISHED -j ACCEPT
+
 # syntax : iptables -A CHAIN -s SRC -d DST -p TCP/UDP/ICMP --sport NB --dport NB -j ACCEPT
 
 # Ping LAN->DMZ
