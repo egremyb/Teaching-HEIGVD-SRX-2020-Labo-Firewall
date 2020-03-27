@@ -125,7 +125,7 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 
 | Adresse IP source | Adresse IP destination | Type | Port src | Port dst | Action |
 | :---:             | :---:                  | :---:| :------: | :------: | :----: |
-| 192.168.100.0/24  | Serveurs DNS           | TCP  | 53       | 53       | ACCEPT |
+| 192.168.100.0/24  | interface WAN          | TCP  | 53       | 53       | ACCEPT |
 | 192.168.100.0/24  | interface WAN          | UDP  | 53       | 53       | ACCEPT |
 | 192.168.100.0/24  | interface WAN          | ICMP | 1        | 1        | ACCEPT |
 | 192.168.100.0/24  | 192.168.200.0/24       | ICMP | 1        | 1        | ACCEPT |
@@ -436,8 +436,8 @@ ping 8.8.8.8
 Faire une capture du ping.
 
 ---
-**LIVRABLE : capture d'écran de votre ping vers l'Internet.**
-
+**LIVRABLE : capture d'écran de votre ping vers l'Internet.**  
+![ping vers Internet](./figures/screenshot_ping_server_internet_success.png
 ---
 
 <ol type="a" start="3">
@@ -477,8 +477,8 @@ ping www.google.com
 
 ---
 
-**LIVRABLE : capture d'écran de votre ping.**
-
+**LIVRABLE : capture d'écran de votre ping.**  
+![ping Google](./figures/screenshot_ping_client_google_fail.png)
 ---
 
 * Créer et appliquer la règle adéquate pour que la **condition 1 du cahier des charges** soit respectée.
@@ -488,7 +488,9 @@ Commandes iptables :
 ---
 
 ```bash
-LIVRABLE : Commandes iptables
+# DNS LAN->WAN
+iptables -A FORWARD -p tcp --source 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT 
+iptables -A FORWARD -p udp --source 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT 
 ```
 
 ---
@@ -501,7 +503,7 @@ LIVRABLE : Commandes iptables
 ---
 
 **LIVRABLE : capture d'écran de votre ping.**
-
+![ping Google](./figures/screenshot_ping_client_google_success.png)
 ---
 
 <ol type="a" start="6">
@@ -513,7 +515,7 @@ LIVRABLE : Commandes iptables
 **Réponse**
 
 **LIVRABLE : Votre réponse ici...**
-
+Le premier ping fonctionnait car le client LAN effectuait le ping directement sur une IP. Le deuxième ping ne pouvait pas fonctionner car il lui fallait contacter un serveur DNS pour lier le nom de domaine à une IP. Ceci ne pouvant pas fonctionner avant l'ajout des règles iptable pour le DNS.
 ---
 
 
