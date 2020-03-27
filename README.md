@@ -457,7 +457,7 @@ ping 192.168.200.3
 
 **LIVRABLE : capture d'écran de votre tentative de ping.**
 
-
+![tentative de ping](./figures/screenshot_ping_client_server_fail.png)
 
 ---
 
@@ -566,7 +566,7 @@ ping 192.168.100.3
 
 
 **LIVRABLE : capture d'écran de votre nouvelle tentative de ping.**
-
+![nouvelle tentative de ping](./figures/screenshot_ping_server_client_success.png)
 
 
 ---
@@ -594,7 +594,7 @@ ping 8.8.8.8
 
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
-
+!(ping vers l'Internet)[.figures/screenshot_ping_server_internet_fail.png)
 
 
 ---
@@ -820,18 +820,18 @@ Faire une capture du ping.
 
 | De Client\_in\_LAN à | OK/KO | Commentaires et explications |
 | :---                 | :---: | :---                         |
-| Interface DMZ du FW  |       |                              |
-| Interface LAN du FW  |       |                              |
-| Client LAN           |       |                              |
-| Serveur WAN          |       |                              |
+| Interface DMZ du FW  | KO    | Toutes les INPUT du FW sont DROP |
+| Interface LAN du FW  | KO    | Toutes les INPUT du FW sont DROP |
+| Client LAN           | OK    |                              |
+| Serveur WAN          | OK    |                              |
 
 
 | De Server\_in\_DMZ à | OK/KO | Commentaires et explications |
 | :---                 | :---: | :---                         |
-| Interface DMZ du FW  |       |                              |
-| Interface LAN du FW  |       |                              |
-| Serveur DMZ          |       |                              |
-| Serveur WAN          |       |                              |
+| Interface DMZ du FW  | KO    |                              |
+| Interface LAN du FW  | KO    |                              |
+| Serveur DMZ          | OK    |                              |
+| Serveur WAN          | KO    |                              |
 
 
 ## Règles pour le protocole DNS
