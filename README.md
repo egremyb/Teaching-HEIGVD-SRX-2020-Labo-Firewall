@@ -594,7 +594,7 @@ ping 8.8.8.8
 
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
-!(ping vers l'Internet)[.figures/screenshot_ping_server_internet_fail.png)
+!(ping vers l'Internet)[./figures/screenshot_ping_server_internet_fail.png)
 
 
 ---
