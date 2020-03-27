@@ -582,7 +582,8 @@ Commandes iptables :
 ---
 
 ```bash
-LIVRABLE : Commandes iptables
+iptables -A FORWARD -s 192.168.100.3 --d 192.168.100.2 -p tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -s 192.168.100.3 --d 192.168.200.3 -p tcp --dport 22 -j ACCEPT
 ```
 
 ---
