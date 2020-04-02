@@ -12,6 +12,8 @@ Vous pouvez répondre aux questions en modifiant directement votre clone du READ
 
 [Introduction](https://github.com/arubinst/Teaching-HEIGVD-SRX-2020-Labo-Firewall#introduction)
 
+[Participants](https://github.com/arubinst/Teaching-HEIGVD-SRX-2020-Labo-Firewall#participants)
+
 [Echéance](https://github.com/arubinst/Teaching-HEIGVD-SRX-2020-Labo-Firewall#echéance)
 
 [Topologie](https://github.com/arubinst/Teaching-HEIGVD-SRX-2020-Labo-Firewall#topologie)
@@ -40,6 +42,10 @@ L’objectif principal de ce laboratoire est de familiariser les étudiants avec
 En premier, une partie théorique permet d’approfondir la rédaction de règles de filtrage.
 
 Par la suite, la mise en pratique d’un pare-feu permettra d’approfondir la configuration et l’utilisation d’un pare-feu ainsi que la compréhension des règles.
+
+## Participants
+- Arthur Bécaud (arthur.becaud@heig-vd.ch)
+- Bruno Egremy (bruno.egremy@heig-vd.ch)
 
 ## Auteurs
 
